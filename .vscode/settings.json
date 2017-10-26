@@ -1,4 +1,6 @@
 {
+  "cmake.useCMakeServer": false,
+  "cmake.generator": "Unix Makefiles",
   "files.associations": {
     "__bit_reference": "cpp",
     "__functional_base": "cpp",

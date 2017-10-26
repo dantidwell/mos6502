@@ -1,5 +1,11 @@
 #include <stdint.h>
 
+enum class CpuInstruction { 
+  NOOP, 
+  LDA, /* load a value into the accumulator */
+  STA /* store from the accumulator */
+};
+
 static uint8_t *Memory; 
 
 struct Cpu { 
