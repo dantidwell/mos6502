@@ -1,6 +1,17 @@
-dist: trusty
-sudo: false 
-language: cpp 
+sudo: required
+language: c++ 
+
+script: 
+  - sudo unlink /usr/bin/gcc && sudo ln -s /usr/bin/gcc-6 /usr/bin/gcc
+  - gcc --version
+
+addons: 
+  apt:
+    sources: 
+    - ubuntu-toolchain-r-test
+    packages: 
+    - gcc-6
+    - g++-6
 
 script: 
   - cmake .
