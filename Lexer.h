@@ -1,6 +1,8 @@
 #include <string>
 #include <vector>
 
+#include "SourceText.h"
+
 enum class CpuInstruction;
 
 enum class SyntaxTokenType { 
@@ -27,5 +29,11 @@ struct SyntaxToken {
 
 class Lexer {
 public:  
-  static std::vector<SyntaxToken> Lex(const std::string &sourceText);
+  static const std::string Lex(SourceText &sourceText);
+private: 
+  static void EatLeadingFluff(SourceText &text);
+  static void EatTrailingFluff(SourceText &text);
+  static void ReadComment(SourceText &text);
+  static void ReadInstructionOrLabel(SourceText &text);
+  static void ReadInteger(SourceText &text);
 };

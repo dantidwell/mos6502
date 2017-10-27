@@ -2,17 +2,39 @@
     "version": "0.2.0",
     "configurations": [
       {
-        "name": "(lldb) Launch",
-        "type": "cppdbg",
+        "name": "Assembler Debug (Windows)",
         "request": "launch",
-        "preLaunchTask": "build",
-        "program": "${workspaceRoot}/build/cpu",
-        "args": [],
+        "preLaunchTask": "CMake: Build",
+        "program": "${workspaceRoot}/build/Debug/masm.exe",
+        "type": "cppvsdbg",
+        // "linux": {
+        //   "program": "${workspaceRoot}/build/masm",
+        //   "MIMode": "lldb",    
+        //   "type": "cppdbg"
+        // },
+        // "osx": {
+        //   "program": "${workspaceRoot}/build/masm",
+        //   "MIMode": "lldb",
+        //   "type": "cppdbg"
+        // },
+        "args": ["./test/file.asm"],
         "stopAtEntry": false,
         "cwd": "${workspaceRoot}",
         "environment": [],
-        "externalConsole": true,
-        "MIMode": "lldb"
+        "externalConsole": true
+      },
+      {
+        "name": "Assembler Debug (Unix)",
+        "request": "launch",
+        "preLaunchTask": "CMake: Build",
+        "program": "${workspaceRoot}/build/masm",
+        "MIMode": "lldb",    
+        "type": "cppdbg",
+        "args": ["./test/file.asm"],
+        "stopAtEntry": false,
+        "cwd": "${workspaceRoot}",
+        "environment": [],
+        "externalConsole": true
       }
     ]
   }

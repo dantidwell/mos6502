@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "command": "make",
+      "command": "cmake --build .",
       "group": {
         "kind": "build",
         "isDefault": true
@@ -12,16 +12,17 @@
       "options": {
         "cwd": "${workspaceFolder}/build"
       },
-      "taskName": "build",
+      "taskName": "CMake: Build",
       "type": "shell"
     },
     {
-      "command": "make clean",
+      "command": "cmake ..",
       "options": {
-        "cwd": "${workspaceFolder}/bin"
+        "cwd": "${workspaceFolder}/build"
       },
-      "taskName": "clean",
-      "type": "shell"
+      "taskName": "CMake: Generate",
+      "type": "shell",
+      "problemMatcher": []
     }
   ]
 }
