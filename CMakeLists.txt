@@ -5,7 +5,7 @@ if(MSVC)
   add_compile_options(/std:c++17)
   add_compile_options(/W4)
 else() 
-  add_compile_options(-std=c++17)
+  add_compile_options(-std=c++1z)
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif() 
 
