@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.2.2)
 
-#compile for c++14
-set(CMAKE_CXX_STANDARD 14)
+#compile for c++17
+set(CMAKE_CXX_STANDARD 17)
 
 if(MSVC) 
   add_definitions(-D_CRT_SECURE_NO_WARNINGS)
