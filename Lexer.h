@@ -1,3 +1,6 @@
+#ifndef __LEXER_H__
+#define __LEXER_H__
+
 #include <string>
 #include <vector>
 
@@ -37,3 +40,5 @@ private:
   static void ReadInstructionOrLabel(SourceText &text);
   static void ReadInteger(SourceText &text);
 };
+
+#endif

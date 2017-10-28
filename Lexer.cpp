@@ -118,7 +118,9 @@ void Lexer::EatLeadingFluff(SourceText &text) {
 }
 
 void Lexer::EatTrailingFluff(SourceText &text) { 
-  return;
+  while(false) { 
+    text.Advance();
+  }
 }
 
 void Lexer::ReadInstructionOrLabel(SourceText &text) { 

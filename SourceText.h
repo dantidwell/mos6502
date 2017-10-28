@@ -1,5 +1,10 @@
+#ifndef __SOURCE_TEXT_H__
+#define __SOURCE_TEXT_H__
+
 #include <iostream>
 #include <memory>
+
+#include "Shim.h"
 
 class SourceText {
 public:
@@ -39,3 +44,5 @@ private:
   std::string::const_iterator _cursor;
   std::string::const_iterator _end;
 };
+
+#endif

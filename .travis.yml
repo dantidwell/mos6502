@@ -1,16 +1,14 @@
-sudo: required
-language: c++ 
+dist: trusty
+sudo: false
+language: cpp
 
-addons: 
+addons:
   apt:
-    sources: 
-    - ubuntu-toolchain-r-test
-    packages: 
-    - gcc-7
-    - g++-7
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-5
 
-script: 
-  - sudo unlink /usr/bin/gcc && sudo ln -s /usr/bin/gcc-7 /usr/bin/gcc
-  - gcc --version
-  - cmake .
+script:
+  - CXX=/usr/bin/g++-5 CC=/usr/bin/gcc-5 cmake -D ENABLE_COVERAGE:BOOL=TRUE .
   - cmake --build . -- -j2
